@@ -155,7 +155,7 @@ CREATE TABLE `PhysicalPerson` (
 
 INSERT INTO `PhysicalPerson` (`id`, `cpf`, `client_id`) VALUES
 (1, 2147483647, 2),
-(2, 80084143, 3),
+(2, 67676, 3),
 (3, 798798796, 5),
 (4, 879687, 6),
 (5, 787, 7);
