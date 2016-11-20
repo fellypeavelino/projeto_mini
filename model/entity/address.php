@@ -6,7 +6,7 @@ class Address{
 		# code...
 	}
 
-	public static function getInstance(
+	public function getInstance(
     	$number,$street, $district, 
     	$city, $state,
     	$idPerson = null, $id = null

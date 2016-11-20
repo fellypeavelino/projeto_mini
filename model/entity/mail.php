@@ -6,7 +6,7 @@ class Mail{
 		# code...
 	}
 
-	public static function getInstance(
+	public function getInstance(
     	$mail,$idPerson = null, $id = null
 	)
 	{

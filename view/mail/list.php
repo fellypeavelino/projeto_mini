@@ -23,11 +23,11 @@
 	<div class="row">
 		<h2>Add</h2>
 		<div class="col-lg-12">
-			<form class="form-horizontal" method="post" action="/phone/list/<?= $id.'/'.$phone_id; ?>">
+			<form class="form-horizontal" method="post" action="/mail/list/<?= $id.'/'.$mail_id; ?>">
 			  <div class="form-group">
-			    <label class="control-label col-sm-2" for="name">Number:</label>
+			    <label class="control-label col-sm-2" for="name">Mail:</label>
 			    <div class="col-sm-10">
-			      <input type="number" class="form-control" value="<?= $phone->phone; ?>" id="number" name="number" placeholder="number">
+			      <input type="mail" class="form-control" value="<?= $email; ?>" id="mail" name="mail" placeholder="Mail">
 			    </div>
 			  </div>
 			  <div class="form-group">
@@ -35,7 +35,7 @@
 			      <button type="Submit"  class="btn btn-default">Submit</button>
 			    </div>
 			  </div>
-			  <input type="hidden" name="id" id="id" value="<?= $phone_id; ?>" />
+			  <input type="hidden" name="id" id="id" value="<?= $mail_id; ?>" />
 			</form>			
 		</div>
 	</div>
@@ -45,7 +45,7 @@
 		    <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
 		        <tr>
 		            <th>ID</th>
-		            <th>Number</th>
+		            <th>Mail</th>
 		            <th class="text-center">Action</th>
 		        </tr>
 		    </thead>
@@ -53,12 +53,12 @@
 	    		<? foreach ($list as $key => $value): ?>
 	            <tr class="tr" container="<?= $value->id;?>">
 	                <td><?= ($key + 1); ?></td>
-	                <td><?= $value->phone; ?></td>
+	                <td><?= $value->mail; ?></td>
 	                <td class="text-center">                
-	                <a class='btn btn-info btn-xs' href="/phone/list/<?= $id; ?>/<?= $value->id; ?>">
+	                <a class='btn btn-info btn-xs' href="/mail/list/<?= $id; ?>/<?= $value->id; ?>">
 	                	<span class="glyphicon glyphicon-edit"></span> Edit
 	                </a> 
-	                <a href="/phone/del/<?= $id; ?>/<?= $value->id; ?>" class="btn btn-danger btn-xs">
+	                <a href="/mail/del/<?= $id; ?>/<?= $value->id; ?>" class="btn btn-danger btn-xs">
 	                	<span class="glyphicon glyphicon-remove"></span> Del
 	                </a>
 	                </td>
