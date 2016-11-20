@@ -6,7 +6,7 @@ class Phone{
 		# code...
 	}
 
-	public static function getInstance(
+	public function getInstance(
     	$number,$idPerson = null, $id = null
 	)
 	{

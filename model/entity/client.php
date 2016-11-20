@@ -1,6 +1,17 @@
 <?
 abstract class Client{
 
+	public function __construct(
+        $name,$login,
+    	$password, $id=null
+	)
+	{
+    	$this->name = $name;
+    	$this->login = $login;
+    	$this->password = $password;
+    	$this->id = $id;		
+	}
+
 	private $id;
 	private $name;
 	private $login;

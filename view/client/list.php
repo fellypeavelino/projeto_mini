@@ -11,6 +11,12 @@
 	    box-shadow: 3px 3px 0px transparent;
 	    transition: 0.5s;
 	}
+	.hide{
+		display: none;
+	}
+	.tr{
+		cursor:pointer;
+	}
 </style>
 <br>
 <div class="container-fluid row">
@@ -20,57 +26,60 @@
 		    <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
 		        <tr>
 		            <th>ID</th>
-		            <th>Title</th>
-		            <th>Parent ID</th>
+		            <th>Name</th>
+		            <th>Login</th>
 		            <th class="text-center">Action</th>
 		        </tr>
 		    </thead>
-	    	<tbody>
-	            <tr>
-	                <td>1</td>
-	                <td>News</td>
-	                <td>News Cate</td>
-	                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+	    	<tbody id="tbody_list">
+	    		<? foreach ($list as $key => $value): ?>
+	            <tr class="tr" container="<?= $value->id;?>">
+	                <td><?= ($key + 1); ?></td>
+	                <td><?= $value->name; ?></td>
+	                <td><?= $value->login; ?></td>
+	                <td class="text-center">
+	                <a class='btn btn-info btn-xs' href="/client/edit/<?= $value->id; ?>">
+	                	<span class="glyphicon glyphicon-edit"></span> Edit</a> 
+	                <a href="" class="btn btn-danger btn-xs">
+	                	<span class="glyphicon glyphicon-remove"></span> Del</a>
+	                </td>
 	            </tr>
-	            <tr>
-	                <td>2</td>
-	                <td>Products</td>
-	                <td>Main Products</td>
-	                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-	            </tr>
-	            <tr>
-	                <td>3</td>
-	                <td>Blogs</td>
-	                <td>Parent Blogs</td>
-	                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-	            </tr>
+	        	<? endforeach; ?>
 	        </tbody>
 	    </table>
     </div>
     <div class="col-md-4">
+    	<h3>Add</h3>
 		<form class="form-horizontal" id="form_add">
 		  <div class="form-group">
 		    <label class="control-label col-sm-2" for="name">Name:</label>
 		    <div class="col-sm-10">
-		      <input type="text" class="form-control" id="name" placeholder="Name">
+		      <input type="text" class="form-control" id="name" name="name" placeholder="Name">
 		    </div>
 		  </div>
 		  <div class="form-group">
 		    <label class="control-label col-sm-2" for="login">Login:</label>
 		    <div class="col-sm-10">
-		      <input type="text" class="form-control" id="login" placeholder="Login">
+		      <input type="text" class="form-control" id="login" name="login" placeholder="Login">
 		    </div>
 		  </div>
 		  <div class="form-group">
-		    <label class="control-label col-sm-2" for="pwd">Password:</label>
+		    <label class="control-label col-sm-2" for="password">Password:</label>
 		    <div class="col-sm-10">
-		      <input type="password" class="form-control" id="password" placeholder="Enter password">
+		      <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
 		    </div>
 		  </div>
 		  <div class="form-group">
-		    <div class="col-sm-offset-2 col-sm-10">
-		      <div class="checkbox">
-		        <label><input type="checkbox"> Remember me</label>
+		  	<label class="control-label col-sm-2" for="person">Person:</label>
+		    <div class="row">
+		      <div class="checkbox col-lg-4">
+		        <label><input type="radio" id="legal" name="person"> Legal</label>
+		      </div>
+		      <div class="checkbox col-lg-4">
+		        <label><input type="radio" id="physical" name="person"> Physical</label>
+		      </div>
+		      <div class="col-lg-6">
+		      	<input type="number" id="person" class="form-control hide"/>
 		      </div>
 		    </div>
 		  </div>

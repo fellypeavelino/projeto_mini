@@ -12,8 +12,7 @@ class Frontcontroller{
 		require_once "{$pathController}.php";
 		$class = new $controller();
 		$action = (!empty($param[2]) ? $param[2] : "index");
-
-		$call = call_user_func_array(array($class, $action), array());
+		$call = call_user_func_array(array($class, $action), $this->param($param));
 	}
 
 	private function newInstace($value)
@@ -27,5 +26,16 @@ class Frontcontroller{
 		if(empty($value)){$value = "client";}
 		return $value."Controller";
 	}	
+
+	private function param($param)
+	{
+		if(isset($param[3])){
+			unset($param[0]);
+			unset($param[1]);
+			unset($param[2]);
+			return $param;
+		}
+		return [];
+	}
 
 }

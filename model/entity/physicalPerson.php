@@ -5,21 +5,20 @@ class PhysicalPerson extends Client{
 
 	public function __construct()
 	{
-		# code...
+
 	}
 
-	public static function getInstance(
+	public function getInstance(
     	$name,$login,
     	$password,$cpf,
     	$idPerson = null, $id = null
 	)
 	{
-    	$this->name = $name;
-    	$this->login = $login;
-    	$this->password = $password;
+		parent::__construct(
+			$name,$login,
+    		$password,$id);
     	$this->cpf = $cpf;
     	$this->idPerson = $idPerson; 
-    	$this->id = $id;
     	return $this;	
 	}
 
