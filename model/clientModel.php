@@ -4,7 +4,7 @@ require_once("dao.php");
 
 class ClientModel{
 
-	public function list(){
+	public function _list(){
 		$sql = "select * from client order by id desc";
 		$consult = DB::prepare($sql);
 		$consult->execute();

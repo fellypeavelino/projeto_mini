@@ -74,7 +74,7 @@
 		            <th class="text-center">Action</th>
 		        </tr>
 		    </thead>
-	    	<tbody id="tbody_list">
+	    	<tbody id="tbody__list">
 	    		<? foreach ($list as $key => $value): ?>
 	            <tr class="tr" container="<?= $value->id;?>">
 	                <td><?= ($key + 1); ?></td>
@@ -82,13 +82,13 @@
 	                <td><?= $value->login; ?></td>
 	                <td><?= ($value->cpf == "" ? $value->cnpj : $value->cpf); ?></td>
 	                <td class="text-center">
-	               	<a class='btn btn-primary btn-xs' href="/address/list/<?= $value->id; ?>">
+	               	<a class='btn btn-primary btn-xs' href="/address/_list/<?= $value->id; ?>">
 	                	<span class="glyphicon glyphicon-home"></span> Address
 	                </a>
-	                <a class='btn btn-default btn-xs' href="/mail/list/<?= $value->id; ?>">
+	                <a class='btn btn-default btn-xs' href="/mail/_list/<?= $value->id; ?>">
 	                	<span class="glyphicon glyphicon-envelope"></span> Mail
 	                </a>	                
-	                <a class='btn btn-success btn-xs' href="/phone/list/<?= $value->id; ?>">
+	                <a class='btn btn-success btn-xs' href="/phone/_list/<?= $value->id; ?>">
 	                	<span class="glyphicon glyphicon-phone"></span> Phone
 	                </a>	                
 	                <a class='btn btn-info btn-xs' href="/client/edit/<?= $value->id; ?>">

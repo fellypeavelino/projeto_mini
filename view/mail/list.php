@@ -23,7 +23,7 @@
 	<div class="row">
 		<h2>Add</h2>
 		<div class="col-lg-12">
-			<form class="form-horizontal" method="post" action="/mail/list/<?= $id.'/'.$mail_id; ?>">
+			<form class="form-horizontal" method="post" action="/mail/_list/<?= $id.'/'.$mail_id; ?>">
 			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="name">Mail:</label>
 			    <div class="col-sm-10">
@@ -48,13 +48,13 @@
 		            <th class="text-center">Action</th>
 		        </tr>
 		    </thead>
-	    	<tbody id="tbody_list">
+	    	<tbody id="tbody__list">
 	    		<? foreach ($list as $key => $value): ?>
 	            <tr class="tr" container="<?= $value->id;?>">
 	                <td><?= ($key + 1); ?></td>
 	                <td><?= $value->mail; ?></td>
 	                <td class="text-center">                
-	                <a class='btn btn-info btn-xs' href="/mail/list/<?= $id; ?>/<?= $value->id; ?>">
+	                <a class='btn btn-info btn-xs' href="/mail/_list/<?= $id; ?>/<?= $value->id; ?>">
 	                	<span class="glyphicon glyphicon-edit"></span> Edit
 	                </a> 
 	                <a href="/mail/del/<?= $id; ?>/<?= $value->id; ?>" class="btn btn-danger btn-xs">

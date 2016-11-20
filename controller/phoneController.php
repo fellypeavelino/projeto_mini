@@ -8,7 +8,7 @@ class PhoneController{
 		require_once('model/entity/phone.php');
 	}
 
-	public function list($id,$phone_id=null)
+	public function _list($id,$phone_id=null)
 	{
 		$phoneModel = new PhoneModel();
 		$phone = new Phone();
@@ -38,7 +38,7 @@ class PhoneController{
 	public function del($id,$phone_id)
 	{
 		(new PhoneModel)->delete($phone_id);
-		header("Location:/phone/list/".$id);
+		header("Location:/phone/_list/".$id);
 	}
 
 }

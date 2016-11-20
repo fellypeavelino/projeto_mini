@@ -9,7 +9,7 @@ class mailController{
 		require_once('model/entity/mail.php');
 	}
 
-	public function list($id,$mail_id=null)
+	public function _list($id,$mail_id=null)
 	{
 		$mailModel = new MailModel();
 		$mail = new Mail();
@@ -42,6 +42,6 @@ class mailController{
 	public function del($id,$mail_id)
 	{
 		(new mailModel)->delete($mail_id);
-		header("Location:/mail/list/".$id);
+		header("Location:/mail/_list/".$id);
 	}	
 }

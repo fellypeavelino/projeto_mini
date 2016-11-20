@@ -23,7 +23,7 @@
 	<div class="row">
 		<h2>Add</h2>
 		<div class="col-lg-12">
-			<form class="form-horizontal" method="post" action="/phone/list/<?= $id.'/'.$phone_id; ?>">
+			<form class="form-horizontal" method="post" action="/phone/_list/<?= $id.'/'.$phone_id; ?>">
 			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="name">Number:</label>
 			    <div class="col-sm-10">
@@ -48,13 +48,13 @@
 		            <th class="text-center">Action</th>
 		        </tr>
 		    </thead>
-	    	<tbody id="tbody_list">
+	    	<tbody id="tbody__list">
 	    		<? foreach ($list as $key => $value): ?>
 	            <tr class="tr" container="<?= $value->id;?>">
 	                <td><?= ($key + 1); ?></td>
 	                <td><?= $value->phone; ?></td>
 	                <td class="text-center">                
-	                <a class='btn btn-info btn-xs' href="/phone/list/<?= $id; ?>/<?= $value->id; ?>">
+	                <a class='btn btn-info btn-xs' href="/phone/_list/<?= $id; ?>/<?= $value->id; ?>">
 	                	<span class="glyphicon glyphicon-edit"></span> Edit
 	                </a> 
 	                <a href="/phone/del/<?= $id; ?>/<?= $value->id; ?>" class="btn btn-danger btn-xs">

@@ -9,7 +9,7 @@ class AddressController{
 		require_once('model/entity/address.php');
 	}
 
-	public function list($id,$address_id=null)
+	public function _list($id,$address_id=null)
 	{
 		$addressModel = new AddressModel();
 		$address = new Address();
@@ -44,6 +44,6 @@ class AddressController{
 	public function del($id,$address_id)
 	{
 		(new addressModel)->delete($address_id);
-		header("Location:/address/list/".$id);
+		header("Location:/address/_list/".$id);
 	}	
 }

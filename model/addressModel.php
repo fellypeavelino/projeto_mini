@@ -51,11 +51,11 @@ class AddressModel{
 			$sql = "UPDATE adress SET number=:number, street=:street,
 			district=:district,city=:city,state=:state,client_id=:client_id WHERE id = :id";
 			$update = DB::prepare($sql);
-			$insert->bindParam(":number",$obj->getNumber());
-			$insert->bindParam(":street",$obj->getStreet());
-			$insert->bindParam(":district",$obj->getDistrict());
-			$insert->bindParam(":city",$obj->getCity());
-			$insert->bindParam(":state",$obj->getState());
+			$update->bindParam(":number",$obj->getNumber());
+			$update->bindParam(":street",$obj->getStreet());
+			$update->bindParam(":district",$obj->getDistrict());
+			$update->bindParam(":city",$obj->getCity());
+			$update->bindParam(":state",$obj->getState());
 			$update->bindParam(":id",$obj->getId());
 			$update->execute();
 			$data["success"] = true;

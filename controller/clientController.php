@@ -9,13 +9,13 @@ class ClientController{
 
 	public function index()
 	{
-		$list = (new ClientModel)->list();
+		$list = (new ClientModel)->_list();
 		require_once('view/client/list.php');
 	}
 
 	public function listAjax()
 	{
-		$list = (new ClientModel)->list();
+		$list = (new ClientModel)->_list();
 		require_once('view/client/list10.php');		
 	}
 
@@ -82,7 +82,7 @@ class ClientController{
 	public function delete($id)
 	{
 		(new clientModel)->delete($id);
-		header("Location:/client/);
+		header("Location:/client/");
 	}
 
 }

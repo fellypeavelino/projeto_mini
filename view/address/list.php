@@ -23,7 +23,7 @@
 	<div class="row">
 		<h2>Add</h2>
 		<div class="col-lg-12">
-			<form class="form-horizontal" method="post" action="/address/list/<?= $id.'/'.$address_id; ?>">
+			<form class="form-horizontal" method="post" action="/address/_list/<?= $id.'/'.$address_id; ?>">
 			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="number">Number:</label>
 			    <div class="col-sm-10">
@@ -76,7 +76,7 @@
 		            <th class="text-center">Action</th>
 		        </tr>
 		    </thead>
-	    	<tbody id="tbody_list">
+	    	<tbody id="tbody__list">
 	    		<? foreach ($list as $key => $value): ?>
 	            <tr class="tr" container="<?= $value->id;?>">
 	                <td><?= ($key + 1); ?></td>
@@ -86,10 +86,10 @@
 	                <td><?= $value->city; ?></td>
 	                <td><?= $value->state; ?></td>
 	                <td class="text-center">                
-	                <a class='btn btn-info btn-xs' href="/address/list/<?= $id; ?>/<?= $value->id; ?>">
+	                <a class='btn btn-info btn-xs' href="/address/_list/<?= $id; ?>/<?= $value->id; ?>">
 	                	<span class="glyphicon glyphicon-edit"></span> Edit
 	                </a> 
-	                <a href="/adress/del/<?= $id; ?>/<?= $value->id; ?>" class="btn btn-danger btn-xs">
+	                <a href="/address/del/<?= $id; ?>/<?= $value->id; ?>" class="btn btn-danger btn-xs">
 	                	<span class="glyphicon glyphicon-remove"></span> Del
 	                </a>
 	                </td>
