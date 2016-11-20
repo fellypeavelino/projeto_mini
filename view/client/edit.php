@@ -19,7 +19,7 @@
 		cursor:pointer;
 	}
 </style>
-<br>
+<br/>
 <div class="container">
 	<div class="row">
 		<h2>Edit</h2>
@@ -66,7 +66,6 @@
     <div class="row col-md-10 col-md-offset-1 custyle">
 	    <table class="table table-striped custab">
 		    <thead>
-		    <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
 		        <tr>
 		            <th>ID</th>
 		            <th>Name</th>
@@ -83,8 +82,8 @@
 	                <td><?= $value->login; ?></td>
 	                <td><?= ($value->cpf == "" ? $value->cnpj : $value->cpf); ?></td>
 	                <td class="text-center">
-	               	<a class='btn btn-primary btn-xs' href="/adress/list/<?= $value->id; ?>">
-	                	<span class="glyphicon glyphicon-home"></span> Adress
+	               	<a class='btn btn-primary btn-xs' href="/address/list/<?= $value->id; ?>">
+	                	<span class="glyphicon glyphicon-home"></span> Address
 	                </a>
 	                <a class='btn btn-default btn-xs' href="/mail/list/<?= $value->id; ?>">
 	                	<span class="glyphicon glyphicon-envelope"></span> Mail

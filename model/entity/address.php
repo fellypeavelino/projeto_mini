@@ -22,13 +22,13 @@ class Address{
     	return $this;	
 	}
 
-	private $id;
-	private $number;
-	private $idPerson;
-	private $street; 
-	private $district;
-	private $city; 
-	private $state;
+	public $id;
+	public $number;
+	public $idPerson;
+	public $street; 
+	public $district;
+	public $city; 
+	public $state;
 
 	public function setId($id){$this->id = $id;}
 	public function getId(){return $this->id;}	

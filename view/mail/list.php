@@ -42,7 +42,6 @@
     <div class="row col-md-10 col-md-offset-1 custyle">
 	    <table class="table table-striped custab">
 		    <thead>
-		    <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
 		        <tr>
 		            <th>ID</th>
 		            <th>Mail</th>

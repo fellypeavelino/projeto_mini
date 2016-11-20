@@ -18,12 +18,13 @@
 		cursor:pointer;
 	}
 </style>
-<br>
+<div class="alert alert-danger invisible">
+  <strong>Aviso!</strong> Selecione uma tipo de pesso.
+</div>
 <div class="container-fluid row">
     <div class="col-md-6 col-md-offset-1 custyle">
 	    <table class="table table-striped custab">
 		    <thead>
-		    <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
 		        <tr>
 		            <th>ID</th>
 		            <th>Name</th>
@@ -73,10 +74,10 @@
 		  	<label class="control-label col-sm-2" for="person">Person:</label>
 		    <div class="row">
 		      <div class="checkbox col-lg-4">
-		        <label><input type="radio" id="legal" name="person"> Legal</label>
+		        <label><input type="radio" class="person" id="legal" name="person"> Legal</label>
 		      </div>
 		      <div class="checkbox col-lg-4">
-		        <label><input type="radio" id="physical" name="person"> Physical</label>
+		        <label><input type="radio" class="person" id="physical" name="person"> Physical</label>
 		      </div>
 		      <div class="col-lg-6">
 		      	<input type="number" id="person" class="form-control hide"/>

@@ -8,8 +8,12 @@ class Frontcontroller{
 		$param = explode ('/',$url);
 		$pathController  = $this->pathInstace($param[1]);
 		$controller = $this->newInstace($param[1]);
-
-		require_once "{$pathController}.php";
+		
+		if(file_exists(dirname(__FILE__)."/".$pathController.".php")){
+			require_once "{$pathController}.php";	
+		}else{
+			require_once "404/index.php";	
+		}
 		$class = new $controller();
 		$action = (!empty($param[2]) ? $param[2] : "index");
 		$call = call_user_func_array(array($class, $action), $this->param($param));

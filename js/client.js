@@ -6,18 +6,22 @@ var clinet = {
 	},
 	add:function () {
 		$("#add").click(function () {
-			$.ajax({
-				url:"/client/addAjax",
-				type:"POST",
-				data: $("#form_add").serialize(),
-				success: function (data) {
-					console.log("entro");
-					clinet.list10();
-				},
-				error: function (data) {
+			if($(".person").is( ":checked" )){
+				$.ajax({
+					url:"/client/addAjax",
+					type:"POST",
+					data: $("#form_add").serialize(),
+					success: function (data) {
+						console.log("entro");
+						clinet.list10();
+					},
+					error: function (data) {
 
-				}
-			});
+					}
+				});
+			}else{
+				$(".invisible").css({"visibility":"visible"});
+			}
 		});
 	},
 	hidenPerson:function () {
