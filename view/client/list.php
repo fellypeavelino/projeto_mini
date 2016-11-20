@@ -48,7 +48,7 @@
 	    </table>
     </div>
     <div class="col-md-4">
-		<form class="form-horizontal">
+		<form class="form-horizontal" id="form_add">
 		  <div class="form-group">
 		    <label class="control-label col-sm-2" for="name">Name:</label>
 		    <div class="col-sm-10">
@@ -83,3 +83,4 @@
     </div>
 </div>
 <? include("view/footer.php"); ?>
+<script src="/js/client.js?vs=<?= rand(1,20);?>"></script>
