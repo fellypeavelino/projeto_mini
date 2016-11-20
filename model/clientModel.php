@@ -167,4 +167,86 @@ class ClientModel{
 		}
 		return $data;
 	}
+
+	public function delete($id)
+	{
+		$data = array();
+		try{
+			$sql = "delete from adress WHERE client_id = :id";
+			$delete = DB::prepare($sql);
+			$delete->bindParam(":id",$id);
+			$delete->execute();
+			$data["success"] = true;
+			$data["adress"] = $obj;
+		}catch(Exception $e){
+			$data["success"] = false;
+			$data["error"] = $e->getMessage();
+		}
+		
+		$data = array();
+		try{
+			$sql = "delete from mail WHERE client_id = :id";
+			$delete = DB::prepare($sql);
+			$delete->bindParam(":id",$id);
+			$delete->execute();
+			$data["success"] = true;
+			$data["mail"] = $obj;
+		}catch(Exception $e){
+			$data["success"] = false;
+			$data["error"] = $e->getMessage();
+		}	
+
+		$data = array();
+		try{
+			$sql = "delete from phone WHERE client_id = :id";
+			$delete = DB::prepare($sql);
+			$delete->bindParam(":id",$id);
+			$delete->execute();
+			$data["success"] = true;
+			$data["phone"] = $obj;
+		}catch(Exception $e){
+			$data["success"] = false;
+			$data["error"] = $e->getMessage();
+		}	
+
+
+		$data = array();
+		try{
+			$sql = "delete from PhysicalPerson WHERE client_id = :id";
+			$delete = DB::prepare($sql);
+			$delete->bindParam(":id",$id);
+			$delete->execute();
+			$data["success"] = true;
+			$data["PhysicalPerson"] = $obj;
+		}catch(Exception $e){
+			$data["success"] = false;
+			$data["error"] = $e->getMessage();
+		}
+
+		$data = array();
+		try{
+			$sql = "delete from LegalPerson WHERE client_id = :id";
+			$delete = DB::prepare($sql);
+			$delete->bindParam(":id",$id);
+			$delete->execute();
+			$data["success"] = true;
+			$data["LegalPerson"] = $obj;
+		}catch(Exception $e){
+			$data["success"] = false;
+			$data["error"] = $e->getMessage();
+		}		
+
+		$data = array();
+		try{
+			$sql = "delete from client WHERE id = :id";
+			$delete = DB::prepare($sql);
+			$delete->bindParam(":id",$id);
+			$delete->execute();
+			$data["success"] = true;
+			$data["cliente"] = $obj;
+		}catch(Exception $e){
+			$data["success"] = false;
+			$data["error"] = $e->getMessage();
+		}
+	}
 }

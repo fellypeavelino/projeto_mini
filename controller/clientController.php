@@ -79,4 +79,10 @@ class ClientController{
 		require_once('view/client/edit.php');
 	}
 
+	public function delete($id)
+	{
+		(new clientModel)->delete($id);
+		header("Location:/client/);
+	}
+
 }
