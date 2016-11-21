@@ -51,6 +51,19 @@ class ClientController{
 		require_once('view/client/view.php');
 	}
 
+	public function send($id)
+	{
+		//echo $id;
+		require_once('library/nativeMail.php');
+		if(count($_POST) > 0){
+			(new NativeMail)->send($_POST);
+		}
+		$clientModel = new ClientModel();
+		$client = $clientModel->getEmailByClient($id)[0];
+		$list = $clientModel->listEmailByClient($id);
+		require_once('view/client/send.php');
+	}
+	
 	public function edit($id)
 	{
 		if(count($_POST) > 0){

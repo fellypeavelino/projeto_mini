@@ -66,6 +66,7 @@
     <div class="row col-md-10 col-md-offset-1 custyle">
 	    <table class="table table-striped custab">
 		    <thead>
+				<a href="/client/send/<?= $obj->id; ?>" class="btn btn-primary btn-xs pull-right"><i class="glyphicon glyphicon-send"></i> Send mail</a>
 		        <tr>
 		            <th>ID</th>
 		            <th>Name</th>

@@ -6,7 +6,7 @@
 		const DB_HOST = "localhost";
 		const DB_NAME = "frelancer";
 		const DB_USER = "root";
-		const DB_PASSWORD = "123";
+		const DB_PASSWORD = "12345678";
 		private function __construct(){
 			self::$connection = new PDO("mysql:dbname=".self::DB_NAME.";host=".self::DB_HOST,
 			self::DB_USER,self::DB_PASSWORD,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));

@@ -22,6 +22,26 @@ class ClientModel{
 		return $consult->fetchAll(PDO::FETCH_OBJ);
 	}
 
+
+	public function getEmailByClient($id)
+	{
+		$sql = "SELECT c.*, m.mail FROM client c 
+		INNER JOIN mail m on m.client_id = c.id WHERE c.id = :id";
+		$consult = DB::prepare($sql);
+		$consult->bindParam(":id",$id);
+		$consult->execute();
+		return $consult->fetchAll(PDO::FETCH_OBJ);		
+	}
+
+	public function listEmailByClient($id)
+	{
+		$sql = "SELECT c.*, m.mail FROM client c 
+		INNER JOIN mail m on m.client_id = c.id";
+		$consult = DB::prepare($sql);
+		$consult->execute();
+		return $consult->fetchAll(PDO::FETCH_OBJ);		
+	}	
+
 	public function listAll(){
 		$sql = "SELECT c.*, p.cpf, l.cnpj FROM client as c 
 		left JOIN PhysicalPerson as p on p.client_id = c.id 

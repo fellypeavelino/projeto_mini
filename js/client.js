@@ -3,6 +3,7 @@ var clinet = {
 		clinet.add();
 		clinet.hidenPerson();
 		clinet.edit();
+		clinet.clickMail();
 	},
 	add:function () {
 		$("#add").click(function () {
@@ -48,6 +49,11 @@ var clinet = {
 		$(".tr").click(function () {
 			var container = $(this).attr("container");
 			window.location.href = "/client/edit/"+container;
+		});
+	},
+	clickMail:function () {
+		$(".mail_tr").click(function () {
+			$("#to").val($(this).attr("container"));
 		});
 	}
 }
